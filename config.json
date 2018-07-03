@@ -1,0 +1,6 @@
+{
+  "moodle_service" : "https://mw5.haifa.ac.il/webservice/rest/server.php",
+  "moodle_session" : "",
+  "ws_token" : "",
+  "course_id" : ""
+}
