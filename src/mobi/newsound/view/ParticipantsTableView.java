@@ -40,7 +40,11 @@ public class ParticipantsTableView extends UITableView<Participant> {
             if (newValue.length() == 0)
                 predicate = null;
             else
-                predicate = participant -> participant.searchableValue().contains(newValue);
+                predicate = participant
+                        -> participant
+                        .searchableValue()
+                        .toLowerCase()
+                        .contains(newValue.toLowerCase());
 
             reloadData();
         });
