@@ -76,6 +76,7 @@ public class FileHandler {
         out.write(data.getBytes());
         out.close();
     }
+
     public static void unzip(String fileZip) throws IOException {
         byte[] buffer = new byte[1024];
         ZipInputStream zis = new ZipInputStream(new FileInputStream(fileZip));
@@ -114,7 +115,6 @@ public class FileHandler {
             out.close();
         }
     }
-
 
     public static void extractRar(String archive, String destination) throws IOException, RarException {
         if (archive == null || destination == null) {
