@@ -33,7 +33,12 @@ public class ParticipantsTableView extends UITableView<Participant> {
 
         getToolBar().setVisible(false);
         APIManager.getInstance().getParticipants((participants, e)
-                -> { this.participants.addAll(participants); this.reloadData(); getToolBar().setVisible(true); });
+                -> {
+            this.participants.addAll(participants);
+            this.reloadData();
+            getToolBar().setVisible(true);
+            this.tableView.setPlaceholder(new Label("Nothing found"));
+        });
 
         textField.setPromptText("Search");
         textField.textProperty().addListener((observable, oldValue, newValue) -> {
